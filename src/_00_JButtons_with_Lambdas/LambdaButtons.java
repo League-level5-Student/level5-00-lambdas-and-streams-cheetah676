@@ -1,9 +1,11 @@
 package _00_JButtons_with_Lambdas;
 
 import java.awt.FlowLayout;
+import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class LambdaButtons {
 	private JFrame window = new JFrame();
@@ -20,6 +22,17 @@ public class LambdaButtons {
 		
 		//1. Call the addActionListener methods for each button. Use lambdas
 		//   to define to functionality of the buttons.
+		addNumbers.addActionListener(e->{
+			String snum1=JOptionPane.showInputDialog("What is one number?");
+			String snum2=JOptionPane.showInputDialog("What is one number?");
+			int num1=Integer.parseInt(snum1);
+			int num2=Integer.parseInt(snum2);
+			System.out.println(num1+num2);
+		});
+		randNumber.addActionListener(e->{
+			Random rand=new Random();
+			 System.out.println(rand.nextInt(1000000));
+		});
 		
 		window.setVisible(true);
 		window.pack();
